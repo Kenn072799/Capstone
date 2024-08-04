@@ -35,7 +35,7 @@ const MainNav = () => {
   return (
     <div className="sticky z-10 top-0 bg-white border-b border-secondary-100 shadow-sm w-full">
       <Container className="flex justify-between items-center py-4">
-        <Link to="/" onClick={handleScrollToTop}>
+        <Link to="/Mrquickfix/" onClick={handleScrollToTop}>
           <img
             className="h-10 w-auto md:h-12 cursor-pointer"
             src={Mainlogo}
@@ -47,7 +47,7 @@ const MainNav = () => {
             className="inline-block ml-8 hover:text-primary-500"
             onClick={handleScrollToTop}
           >
-            <Link to="/">Home</Link>
+            <Link to="/Mrquickfix/">Home</Link>
           </li>
           <li className="inline-block ml-8 hover:text-primary-500">
             <Link to="/about">About us</Link>
