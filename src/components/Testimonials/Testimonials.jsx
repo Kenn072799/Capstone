@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { PiArrowRightLight } from "react-icons/pi";
 import Container from "../Container";
 import customerFeedback from "../../data/CustomerFeedbackData";
-
-const TestimonialCard = lazy(() => import("./testimonialsCard"));
+const TestimonialsCard = lazy(() => import('./testimonialsCard'));
 
 const Testimonials = () => {
   const testimonialsPerPage = 5;
@@ -68,7 +67,7 @@ const Testimonials = () => {
               {getCurrentPageFeedback().map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0">
                   <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
-                    <TestimonialCard testimonial={testimonial} />
+                  <TestimonialsCard />
                   </Suspense>
                 </div>
               ))}
