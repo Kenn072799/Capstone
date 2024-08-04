@@ -12,7 +12,7 @@ export const Servicedata = [
         image: Firstservices,
         title: "Fits-out",
         description:
-          "We have been offering professional services such as painting, carpentry and mansonry. Our team of experts will handle every aspect of your fits-out project, from start to finish.",
+          "We have been offering professional services such as painting, carpentry and mansonry. Our team of experts will handle every aspect of your fits-out project, from start to finish. Our team of experts will handle every aspect of your fits-out project, from start to finish.",
       },
       {
         id: 2,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Topline = () => {
+const topLine = () => {
   // This is the color on the top of the page
   return (
     <div className='fixed z-20 w-full scroll-smooth bg-secondary-50
@@ -8,4 +8,4 @@ const Topline = () => {
   )
 }
 
-export default Topline
+export default topLine

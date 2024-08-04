@@ -1,6 +1,6 @@
 import React from "react";
-import AllProject from "../../components/Projects/Allproject";
-import { Layout } from "../../components/Layout";
+import AllProject from "../components/AllProject";
+import { Layout } from "../components/Layout";
 
 const Projectpage = () => {
   return (

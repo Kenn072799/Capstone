@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "./Container";
-import DividerIMG from "../assets/DividerIMG.jpg";
+import Container from "../Container";
+import DividerIMG from "../../assets/DividerIMG.jpg";
 
-const Dividerservices = () => {
+const dividerServices = () => {
   return (
     // Divider section after services section shown to make user contact us more easily
     <div className="relative">
@@ -12,10 +12,10 @@ const Dividerservices = () => {
       >
         <div className="absolute inset-0 bg-secondary-500 opacity-50"></div>
         <Container className="relative">
-          <h1 className="font-outfit font-semibold text-5xl text-white">
+          <h1 className="font-outfit font-semibold text-3xl md:text-5xl text-white text-center">
             Ready to transform your vision into reality?
           </h1>
-          <p className="text-white text-lg">
+          <p className="text-white md:text-lg text-center">
             Reach out to us for a free consultation.
           </p>
           <div className="flex justify-center">
@@ -23,7 +23,7 @@ const Dividerservices = () => {
               className="font-roboto text-white bg-primary-500
             rounded-3xl px-6 py-2 hover:bg-primary-400 mt-4"
             >
-              Contact us now!
+              Contact us now
             </button>
           </div>
         </Container>
@@ -32,4 +32,4 @@ const Dividerservices = () => {
   );
 };
 
-export default Dividerservices;
+export default dividerServices;

@@ -1,11 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Services from "../components/Services";
+import Services from "../components/Services/Services";
+import DividerServices from "../components/Services/DividerServices";
 import Project from "../components/Projects/Project";
-import Divider from "../components/Dividerservices";
 import { Layout } from "../components/Layout";
-import Testimonials from "../components/Testimonials";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Contact from "../components/Contact";
 
 const Home = () => {
   return (
@@ -13,9 +14,10 @@ const Home = () => {
       <Hero />
       <About />
       <Services />
-      <Divider />
+      <DividerServices />
       <Project />
       <Testimonials />
+      <Contact />
     </Layout>
   );
 };

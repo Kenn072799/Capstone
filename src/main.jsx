@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import Home from "./pages/Home";
-import Projectpage from "./pages/Projects/Projectpage";
+import Projectpage from "./pages/Projectpage";
+import AllTestimonialpage from "./pages/AllTestimonialpage";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -14,8 +15,12 @@ const router = createBrowserRouter([
     
   },
   {
-    path: "/Projects",
+    path: "/projects/all/",
     element: <Projectpage />,
+  },
+  {
+    path: "/testimonials/all/",
+    element: <AllTestimonialpage />,
   },
 ]);
 

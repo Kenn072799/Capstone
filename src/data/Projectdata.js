@@ -1,11 +1,9 @@
 import Firstproject from "../assets/ProjectIMG1.jpg";
 import Secondproject from "../assets/ProjectIMG2.jpg";
-import Seventhservices from "../assets/HouseholdCleaningServicesIMG.jpg";
-import Background from "../assets/Background.png";
 import RenovationIMG from "../assets/RenovationIMG.jpg";
 import RenovationIMG2 from "../assets/RenovationIMG2.jpg";
 
-export const Projectdata = [
+export const ProjectData = [
     {
       id: 1,
       name: "House Renovation 1",

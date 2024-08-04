@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../Container";
 import { FaEnvelope, FaFacebookF } from "react-icons/fa6";
 
-const Topnav = () => {
+const topNav = () => {
   return (
     // To show some social link and contact us link
     <div className="relative z-10 w-full bg-secondary-50 md:py-2">
@@ -44,4 +44,4 @@ const Topnav = () => {
   );
 };
 
-export default Topnav;
+export default topNav;
