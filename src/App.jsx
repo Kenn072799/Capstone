@@ -1,8 +1,8 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
-import Projectpage from './pages/Projectpage';
-import AllTestimonialpage from './pages/AllTestimonialpage';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Projectpage from "./pages/Projectpage";
+import AllTestimonialpage from "./pages/AllTestimonialpage";
 
 const router = createBrowserRouter([
   {
@@ -20,9 +20,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return (
-    <RouterProvider router={router} />
-  );
-}
+  return <RouterProvider router={router} />;
+};
 
 export default App;

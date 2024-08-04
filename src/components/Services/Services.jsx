@@ -5,21 +5,18 @@ import { Servicedata } from "../../data/ServiceData";
 
 const Services = () => {
   return (
-    <div className="bg-white relative pb-24 py-2">
+    <div className="relative bg-white py-2 pb-24">
       <Container>
-        <div className="flex flex-col justify-center items-center text-center">
-          <h1
-            className="font-outfit font-semibold text-3xl md:text-4xl
-          text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 border-primary-500"
-          >
+        <div className="flex flex-col items-center justify-center text-center">
+          <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             We Offer High-Quality Services
           </h1>
-          <p className="font-roboto text-lg md:text-xl text-secondary-500 mt-2 mb-8">
+          <p className="mb-8 mt-2 font-roboto text-secondary-500 sm:text-xl">
             Exceptional Solutions Tailored to Your Needs
           </p>
-          <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
+          <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {Servicedata.map((service, index) => (
             <ServiceCard key={index} serviceData={service} />
           ))}

@@ -3,16 +3,16 @@ import Container from "../Container";
 import ProjectList from "./ProjectList";
 
 const Project = () => (
-  <div className="bg-white h-auto relative py-24">
+  <div className="relative h-auto bg-white py-24">
     <Container>
-      <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="font-outfit font-semibold text-3xl md:text-4xl text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 border-primary-500">
+      <div className="flex flex-col items-center justify-center text-center">
+        <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
           Our Recent Projects
         </h1>
-        <p className="font-roboto text-lg md:text-xl text-secondary-500 mt-2 mb-8">
+        <p className="mb-8 mt-2 font-roboto text-secondary-500 md:text-xl">
           Explore Our Latest Work and Achievements
         </p>
-        <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
+        <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
       </div>
       <ProjectList />
     </Container>

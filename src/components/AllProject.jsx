@@ -18,10 +18,15 @@ const AllProjects = () => {
     "Household Cleaning Services",
   ];
 
-  const sortedProjects = ProjectData.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const filteredProjects = selectedCategory === "Latest"
-    ? sortedProjects
-    : sortedProjects.filter((project) => project.category.includes(selectedCategory));
+  const sortedProjects = ProjectData.sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  const filteredProjects =
+    selectedCategory === "Latest"
+      ? sortedProjects
+      : sortedProjects.filter((project) =>
+          project.category.includes(selectedCategory),
+        );
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const handleCategoryChange = (category) => {
@@ -30,21 +35,21 @@ const AllProjects = () => {
   };
 
   return (
-    <div className="bg-white h-auto py-24">
+    <div className="h-auto bg-white py-24">
       <Container>
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="font-outfit font-semibold text-3xl md:text-4xl text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 py-1 border-primary-500">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="mt-5 border-l-8 border-primary-500 py-1 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             all projects
           </h1>
-          <p className="font-roboto text-xl text-secondary-500 mt-2">
+          <p className="mt-2 text-center font-roboto md:text-lg text-secondary-500">
             A showcase of our excellence in every project.
           </p>
         </div>
-        <div className="relative inline-block text-left pt-4">
+        <div className="relative inline-block pt-4 text-left">
           <button
             type="button"
             onClick={toggleDropdown}
-            className="font-roboto inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 font-roboto text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
@@ -66,7 +71,7 @@ const AllProjects = () => {
           </button>
           {isDropdownOpen && (
             <div
-              className="font-roboto origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-[5]"
+              className="absolute left-0 z-[5] mt-2 w-56 origin-top-left rounded-md bg-white font-roboto shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
@@ -77,7 +82,7 @@ const AllProjects = () => {
                   <button
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={`block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 ${
+                    className={`block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 ${
                       selectedCategory === category ? "bg-gray-100" : ""
                     }`}
                     role="menuitem"
@@ -90,8 +95,8 @@ const AllProjects = () => {
             </div>
           )}
         </div>
-        <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

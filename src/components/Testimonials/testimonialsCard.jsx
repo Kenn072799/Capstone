@@ -3,23 +3,20 @@ import { FaQuoteLeft } from "react-icons/fa6";
 
 const testimonialCard = ({ testimonial }) => {
   return (
-    <div
-      className="testimonial-card py-4 px-10 max-w-2xl rounded-2xl text-center shadow-sm md:mx-10
-    bg-secondary-50 border border-secondary-200 my-24 relative"
-    >
+    <div className="testimonial-card relative my-24 max-w-2xl rounded-2xl border border-secondary-200 bg-secondary-50 px-10 py-4 text-center shadow-sm md:mx-10">
       <div className="flex justify-center">
-        <FaQuoteLeft className="text-primary-500 text-7xl xxs:text-6xl -mt-12 bg-transparent mr-3 xxs:mr-7 md:mr-14" />
+        <FaQuoteLeft className="-mt-12 bg-transparent text-7xl text-primary-500 xxs:mr-7 xxs:text-6xl md:mr-14" />
         <img
           src={testimonial.image}
           alt={testimonial.name}
-          className="rounded-full mb-4 w-28 h-28 object-cover border-4 border-primary-500 -mt-[68px]"
+          className="-mt-[68px] mb-4 h-28 w-28 rounded-full border-4 border-primary-500 object-cover"
         />
-        <FaQuoteLeft className="text-primary-500 text-7xl xxs:text-6xl -mt-12 bg-transparent scale-x-[-1] ml-3 xs:ml-7 md:ml-14" />
+        <FaQuoteLeft className="-mt-12 scale-x-[-1] bg-transparent text-7xl text-primary-500 xxs:ml-7 xxs:text-6xl md:ml-14" />
       </div>
       <h2 className="text-xl font-semibold text-secondary-900">
         {testimonial.name}
       </h2>
-      <p className="text-secondary-500 mt-2 text-center">
+      <p className="mt-2 text-center text-secondary-500">
         {testimonial.feedback}
       </p>
     </div>

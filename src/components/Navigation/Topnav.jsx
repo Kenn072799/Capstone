@@ -6,35 +6,34 @@ const topNav = () => {
   return (
     // To show some social link and contact us link
     <div className="relative z-10 w-full bg-secondary-50 md:py-2">
-      <Container className="pt-1 font-roboto flex justify-between items-center">
-        <div className="items-center text-secondary-800 text-sm md:flex font-light">
+      <Container className="flex items-center justify-between pt-1 font-roboto">
+        <div className="items-center text-sm font-light text-secondary-800 md:flex">
           <p>Powered by</p>
           {/* Miescor website link */}
           <a
             target="_blank"
             href="https://www.miescor.ph/home"
-            className="font-semibold
-            hover:underline hover:text-secondary-900 md:pl-1"
+            className="font-semibold hover:text-secondary-900 hover:underline md:pl-1"
           >
             MIESCOR LOGISTIC, INC.
           </a>
         </div>
         <div>
           <ul className="flex items-center">
-            <li className="px-2 md:px-8 font-light">
+            <li className="px-2 font-light md:px-8">
               {/* Email link */}
               <a
                 href="mailto:mrquickfix@miescor.ph"
-                className="text-secondary-800 hover:text-secondary-900 text-sm md:flex items-center"
+                className="items-center text-sm text-secondary-800 hover:text-secondary-900 md:flex"
               >
-                <FaEnvelope className="text-primary-500 mr-2 text-lg md:px-0" />
+                <FaEnvelope className="mr-2 text-lg text-primary-500 md:px-0" />
                 <p className="hidden md:flex">mrquickfix@miescor.ph</p>
               </a>
             </li>
             {/* FB link */}
             <li>
               <a target="_blank" href="https://www.facebook.com/MLIMrQuickFix">
-                <FaFacebookF className="text-secondary-800 text-xl hover:text-secondary-900" />
+                <FaFacebookF className="text-xl text-secondary-800 hover:text-secondary-900" />
               </a>
             </li>
           </ul>

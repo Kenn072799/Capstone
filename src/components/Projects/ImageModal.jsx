@@ -38,50 +38,57 @@ const ImageModal = ({ isOpen, onClose, images }) => {
 
   if (!isOpen) return null;
 
-  const nextSlide = () => setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-  const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  const nextSlide = () =>
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
+    );
+  const prevSlide = () =>
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
+    );
 
   const handleSwipe = () => {
     if (touchStartX.current - touchEndX.current > 50) nextSlide();
     if (touchStartX.current - touchEndX.current < -50) prevSlide();
   };
 
-  const handleTouchStart = (e) => (touchStartX.current = e.targetTouches[0].clientX);
+  const handleTouchStart = (e) =>
+    (touchStartX.current = e.targetTouches[0].clientX);
   const handleTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     handleSwipe();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="fixed inset-0 bg-black bg-opacity-90" onClick={onClose}>
-        <button className="absolute top-2 right-2 text-white p-2">
+        <button className="absolute right-2 top-2 p-2 text-white">
           <AiOutlineClose size={30} className="opacity-75" />
         </button>
       </div>
       <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-      {loading && (
-            <span className="loading loading-spinner loading-lg"></span>
+        {loading && (
+          <span className="loading loading-spinner loading-lg"></span>
         )}
         <img
           src={images[currentIndex]}
           alt={`Slide ${currentIndex}`}
-          className={`relative max-w-full max-h-screen rounded-2xl ${loading ? 'hidden' : 'block'}`}
+          className={`relative max-h-screen max-w-full rounded-2xl ${loading ? "hidden" : "block"}`}
           onLoad={() => setLoading(false)}
         />
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white py-2 px-4 md:py-4 md:px-6 rounded-full"
+          className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 px-4 py-2 text-white md:px-6 md:py-4"
         >
           ❮
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white py-2 px-4 md:py-4 md:px-6 rounded-full"
+          className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 px-4 py-2 text-white md:px-6 md:py-4"
         >
           ❯
         </button>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 transform rounded bg-black bg-opacity-50 px-3 py-1 text-white">
           {currentIndex + 1} / {images.length}
         </div>
       </div>

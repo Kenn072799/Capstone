@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Container from './Container';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import Background from '../assets/Background.png';
-import { PiArrowRightLight } from 'react-icons/pi';
+import React, { useEffect, useState } from "react";
+import Container from "./Container";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Background from "../assets/Background.png";
+import { PiArrowRightLight } from "react-icons/pi";
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
@@ -18,14 +18,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen flex justify-center items-center">
+    <div className="relative flex h-screen w-full items-center justify-center">
       {loading && (
-        <div className="absolute inset-0 z-50 flex justify-center items-center bg-gray-200">
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-gray-200">
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       )}
       <div
-        className={`fixed inset-0 bg-fixed bg-cover bg-center bg-no-repeat -z-10 ${loading ? 'hidden' : 'block'}`}
+        className={`fixed inset-0 -z-10 bg-cover bg-fixed bg-center bg-no-repeat ${loading ? "hidden" : "block"}`}
         data-aos="zoom-out"
         data-aos-easing="ease-out-sine"
         data-aos-duration="800"
@@ -42,19 +42,19 @@ const Hero = () => {
             data-aos-duration="800"
             data-aos-delay="200"
           >
-            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl uppercase font-semibold text-center">
+            <h1 className="text-center text-4xl font-semibold uppercase text-white md:text-6xl lg:text-7xl">
               Leave the Repairs to Us
             </h1>
-            <h2 className="text-white text-lg md:text-xl lg:text-2xl pt-1 font-outfit text-center">
+            <h2 className="pt-1 text-center font-outfit text-lg text-white md:text-xl lg:text-2xl">
               Professional Care for Your Home
             </h2>
-            <h2 className="text-white pb-2 md:text-lg lg:text-xl lg:pb-4 font-outfit font-light text-center">
+            <h2 className="pb-2 text-center font-outfit font-light text-white md:text-lg lg:pb-4 lg:text-xl">
               When it comes to home repairs, you deserve a service that is both
               reliable and professional.
             </h2>
-            <div className="flex mx-auto my-6">
-              <button className="font-roboto text-white bg-primary-500 rounded-3xl hover:bg-primary-400 flex items-center">
-                <div className="flex items-center px-5 py-3 md:px-6 md:py-4 transition hover:translate-x-2">
+            <div className="mx-auto my-6 flex">
+              <button className="flex items-center rounded-3xl bg-primary-500 font-roboto text-white hover:bg-primary-400">
+                <div className="flex items-center px-5 py-3 text-sm transition hover:translate-x-2 md:px-6 md:py-4 md:text-base">
                   Schedule your free consultation
                   <PiArrowRightLight className="ml-2" size={20} />
                 </div>

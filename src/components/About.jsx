@@ -29,13 +29,13 @@ const About = () => {
         <div className="flex flex-col justify-center items-center text-center">
           <h1
             className="font-outfit font-semibold text-3xl md:text-4xl
-          text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 mb-14 border-primary-500"
+          text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 mb-8 border-primary-500"
           >
             About Mr. Quick Fix
           </h1>
           <div className="flex flex-col pt-10 sm:flex-row xs:pt-8">
             <div className="w-full h-auto py-4 px-2 my-3">
-              <FaHouseCrack className="text-primary-500 text-5xl xxs:text-6xl -mt-12 mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
+              <FaHouseCrack className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
               <h3
                 className="text-secondary-700 font-outfit pt-3
             md:text-lg md:mx-0 md:my-0 md:py-2"
@@ -43,8 +43,8 @@ const About = () => {
                 Specializing in Home Repair and Improvements.
               </h3>
             </div>
-            <div className="w-full h-auto py-4 px-2 my-5 xs:my-3">
-              <FaHammer className="text-primary-500 text-5xl xxs:text-6xl -mt-12 mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
+            <div className="w-full h-auto py-4 px-2 xs:my-3">
+              <FaHammer className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
               <h3
                 className="text-secondary-700 font-outfit pt-3
             md:text-lg md:mx-0 md:my-0 md:py-2"
@@ -53,8 +53,8 @@ const About = () => {
                 Project.
               </h3>
             </div>
-            <div className="w-full h-auto py-4 px-2 my-5 xs:my-3">
-              <FaHouseCircleCheck className="text-primary-500 text-5xl xxs:text-6xl -mt-12 mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
+            <div className="w-full h-auto py-4 px-2 xs:my-3">
+              <FaHouseCircleCheck className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
               <h3
                 className="text-secondary-700 font-outfit pt-3
             md:text-lg md:mx-0 md:my-0 md:py-2"
@@ -92,7 +92,7 @@ const About = () => {
                         onClick={() => goToSlide(index)}
                         className={`h-3 w-3 mx-1 rounded-full ${
                           currentIndex === index
-                            ? "bg-white"
+                            ? "bg-white/80"
                             : "bg-secondary-100 bg-opacity-50"
                         }`}
                       />

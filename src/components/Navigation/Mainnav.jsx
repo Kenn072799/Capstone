@@ -33,37 +33,37 @@ const MainNav = () => {
   };
 
   return (
-    <div className="sticky z-10 top-0 bg-white border-b border-secondary-100 shadow-sm w-full">
-      <Container className="flex justify-between items-center py-4">
+    <div className="sticky top-0 z-10 w-full border-b border-secondary-100 bg-white shadow-sm">
+      <Container className="flex items-center justify-between py-4">
         <Link to="/Mrquickfix/" onClick={handleScrollToTop}>
           <img
-            className="h-10 w-auto md:h-12 cursor-pointer"
+            className="h-9 cursor-pointer md:h-12"
             src={Mainlogo}
             alt="Mr. QuickFix"
           />
         </Link>
-        <ul className="font-roboto text-secondary-800 hidden lg:flex items-center cursor-pointer">
+        <ul className="hidden cursor-pointer items-center font-roboto text-secondary-800 lg:flex">
           <li
-            className="inline-block ml-8 hover:text-primary-500"
+            className="ml-8 inline-block hover:text-primary-500"
             onClick={handleScrollToTop}
           >
             <Link to="/Mrquickfix/">Home</Link>
           </li>
-          <li className="inline-block ml-8 hover:text-primary-500">
+          <li className="ml-8 inline-block hover:text-primary-500">
             <Link to="/about">About us</Link>
           </li>
-          <li className="inline-block ml-8 hover:text-primary-500">
+          <li className="ml-8 inline-block hover:text-primary-500">
             <Link to="/services">Services</Link>
           </li>
-          <li className="inline-block ml-8 hover:text-primary-500">
+          <li className="ml-8 inline-block hover:text-primary-500">
             <Link to="/projects">Projects</Link>
           </li>
-          <li className="inline-block ml-8 hover:text-primary-500">
+          <li className="ml-8 inline-block hover:text-primary-500">
             <Link to="/testimonials">Testimonials</Link>
           </li>
-          <li className="inline-block ml-8 hover:text-secondary-100">
+          <li className="ml-8 inline-block hover:text-secondary-100">
             <Link to="/contact">
-              <button className="text-white bg-primary-500 rounded-3xl px-6 py-2 hover:bg-primary-400">
+              <button className="rounded-3xl bg-primary-500 px-6 py-2 text-white hover:bg-primary-400">
                 Contact us
               </button>
             </Link>
@@ -71,9 +71,9 @@ const MainNav = () => {
         </ul>
         <div className="lg:hidden" onClick={handleClick}>
           {open ? (
-            <HiX className="size-[28px] text-secondary-600 border-solid border border-white rounded-full active:text-secondary-500 active:bg-secondary-50" />
+            <HiX className="size-[28px] rounded-full border border-solid border-white text-secondary-600 active:bg-secondary-50 active:text-secondary-500" />
           ) : (
-            <HiMenu className="size-[28px] text-secondary-600 border-solid border border-white rounded-full active:text-secondary-500 active:bg-secondary-50" />
+            <HiMenu className="size-[28px] rounded-full border border-solid border-white text-secondary-600 active:bg-secondary-50 active:text-secondary-500" />
           )}
         </div>
       </Container>
@@ -82,28 +82,28 @@ const MainNav = () => {
       <ul
         className={`${
           open ? "block" : "hidden"
-        } absolute bg-tertiary font-roboto w-full flex flex-col shadow-sm text-secondary-950 border-b border-secondary-100 bg-white cursor-pointer`}
+        } bg-tertiary absolute flex w-full cursor-pointer flex-col border-b border-secondary-100 bg-white font-roboto text-secondary-950 shadow-sm`}
       >
-        <li className="py-2 border-b border-secondary-200 mx-8 active:text-primary-500 active:bg-secondary-50 flex justify-center">
+        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
           <Link to="/" onClick={handleScrollToTop}>
             Home
           </Link>
         </li>
-        <li className="py-2 border-b border-secondary-200 mx-8 active:text-primary-500 active:bg-secondary-50 flex justify-center">
+        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
           <Link to="/about">About us</Link>
         </li>
-        <li className="py-2 border-b border-secondary-200 mx-8 active:text-primary-500 active:bg-secondary-50 flex justify-center">
+        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
           <Link to="/services">Services</Link>
         </li>
-        <li className="py-2 border-b border-secondary-200 mx-8 active:text-primary-500 active:bg-secondary-50 flex justify-center">
+        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
           <Link to="/projects">Projects</Link>
         </li>
-        <li className="py-2 border-b border-secondary-200 mx-8 active:text-primary-500 active:bg-secondary-50 flex justify-center">
+        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
           <Link to="/testimonials">Testimonials</Link>
         </li>
-        <li className="py-4 mx-auto">
+        <li className="mx-auto py-4">
           <Link to="/contact">
-            <button className="text-white bg-primary-500 rounded-3xl px-6 py-2 hover:bg-primary-400">
+            <button className="rounded-3xl bg-primary-500 px-6 py-2 text-white hover:bg-primary-400">
               Contact us
             </button>
           </Link>

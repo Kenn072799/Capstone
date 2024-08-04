@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import SkeletonServiceCard from '../SkeletonLoading/SkeletonCard';
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import SkeletonServiceCard from "../SkeletonLoading/SkeletonCard";
 
 const ServiceCard = ({ serviceData }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -20,40 +20,40 @@ const ServiceCard = ({ serviceData }) => {
 
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + '... ';
+    return text.substring(0, maxLength) + "... ";
   };
 
   return (
     <div
       ref={ref}
-      className="bg-white rounded-2xl shadow-md border border-secondary-100"
+      className="rounded-2xl border border-secondary-100 bg-white shadow-md"
     >
       {!inView ? (
         <SkeletonServiceCard />
       ) : (
         <>
-          <div className="m-w-fit h-48 bg-gray-200 rounded-t-2xl">
+          <div className="m-w-fit h-48 rounded-t-2xl bg-gray-200">
             <img
               src={serviceData.image}
               alt={serviceData.title}
-              className="w-full h-full object-cover rounded-t-2xl"
+              className="h-full w-full rounded-t-2xl object-cover"
               loading="lazy"
             />
           </div>
-          <h1 className="font-outfit font-semibold text-xl text-secondary-700 px-4 py-2 text-center">
+          <h1 className="px-4 py-2 text-center font-outfit text-xl font-semibold text-secondary-700">
             {serviceData.title}
           </h1>
           <div className="h-[1px] w-full bg-secondary-100 px-4"></div>
-          <p className="font-roboto text-secondary-500 text-sm px-4 pb-4 py-2">
+          <p className="px-4 py-2 pb-4 font-roboto text-sm text-secondary-500">
             {isExpanded
               ? serviceData.description
               : truncateText(serviceData.description, maxLength)}
             {shouldTruncate && (
               <button
-                className="relative text-primary-500 font-roboto font-semibold text-sm hover:underline focus:outline-none"
+                className="relative font-roboto text-sm font-semibold text-primary-500 hover:underline focus:outline-none"
                 onClick={toggleExpanded}
               >
-                {isExpanded ? 'See less' : 'See more'}
+                {isExpanded ? "See less" : "See more"}
               </button>
             )}
           </p>

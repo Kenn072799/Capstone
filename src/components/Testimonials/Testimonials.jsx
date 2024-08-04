@@ -4,7 +4,7 @@ import { PiArrowRightLight } from "react-icons/pi";
 import Container from "../Container";
 import customerFeedback from "../../data/CustomerFeedbackData";
 
-const TestimonialCard = lazy(() => import('./testimonialsCard'));
+const TestimonialCard = lazy(() => import("./testimonialsCard"));
 
 const Testimonials = () => {
   const testimonialsPerPage = 5;
@@ -23,7 +23,7 @@ const Testimonials = () => {
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === testimonialsPerPage - 1 ? 0 : prevIndex + 1
+        prevIndex === testimonialsPerPage - 1 ? 0 : prevIndex + 1,
       );
     }, 5000);
 
@@ -46,28 +46,32 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-white relative py-4">
+    <div className="relative bg-white py-4">
       <Container>
-        <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="font-outfit font-semibold text-3xl md:text-4xl text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 border-primary-500">
+        <div className="flex flex-col items-center justify-center text-center">
+          <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             What our clients say
           </h1>
-          <p className="font-roboto text-lg md:text-xl text-secondary-500 mt-2 mb-8">
+          <p className="mb-8 mt-2 font-roboto text-secondary-500 md:text-xl">
             Hear Directly from Those We've Served
           </p>
-          <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
+          <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
         </div>
 
         {/* Carousel */}
-        <div className="overflow-hidden border-box">
-          <div className="relative max-w-2xl mx-auto rounded-2xl py-4">
+        <div className="border-box overflow-hidden">
+          <div className="relative mx-auto max-w-2xl rounded-2xl py-4">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {getCurrentPageFeedback().map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0">
-                  <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
+                  <Suspense
+                    fallback={
+                      <span className="loading loading-spinner loading-lg"></span>
+                    }
+                  >
                     <TestimonialCard testimonial={testimonial} />
                   </Suspense>
                 </div>
@@ -77,25 +81,25 @@ const Testimonials = () => {
         </div>
 
         {/* Indicators */}
-        <div className="flex justify-center mt-4">
+        <div className="mt-4 flex justify-center">
           {getCurrentPageFeedback().map((_, index) => (
             <div
               onClick={() => setCurrentIndex(index)}
               key={index}
-              className={`h-3 w-3 mx-1 rounded-full transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`mx-1 h-3 w-3 cursor-pointer rounded-full transition-all duration-300 ease-in-out ${
                 currentIndex === index ? "bg-primary-500" : "bg-secondary-200"
               }`}
             />
           ))}
         </div>
 
-        <div className="mt-8 text-center flex justify-center">
+        <div className="mt-8 flex justify-center text-center">
           <Link
             to="/Mrquickfix/testimonials/all/"
             onClick={handleScrollToTop}
-            className="text-white bg-primary-500 rounded-3xl hover:bg-primary-400 flex items-center"
+            className="flex items-center rounded-3xl bg-primary-500 text-white hover:bg-primary-400"
           >
-            <div className="flex items-center px-5 py-3 md:px-6 md:py-4 transition hover:translate-x-2">
+            <div className="flex items-center px-5 py-3 text-sm md:text-base transition hover:translate-x-2 md:px-6 md:py-4">
               See more testimonials
               <PiArrowRightLight className="ml-2" size={20} />
             </div>

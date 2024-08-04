@@ -2,7 +2,7 @@ import React, { useState, lazy, Suspense } from "react";
 import customerFeedback from "../../data/CustomerFeedbackData";
 import Container from "../Container";
 
-const TestimonialCard = lazy(() => import('./testimonialsCard'));
+const TestimonialCard = lazy(() => import("./testimonialsCard"));
 
 const AllTestimonials = () => {
   const testimonialsPerPage = 10;
@@ -25,26 +25,34 @@ const AllTestimonials = () => {
   const getPaginationGroup = () => {
     const groupStart = Math.floor((currentPage - 1) / 3) * 3;
     const groupEnd = Math.min(groupStart + 3, totalPages);
-    return Array.from({ length: groupEnd - groupStart }, (_, index) => groupStart + 1 + index);
+    return Array.from(
+      { length: groupEnd - groupStart },
+      (_, index) => groupStart + 1 + index,
+    );
   };
 
   return (
     <div className="bg-white py-4">
       <Container className="min-w-fit">
-        <div className="flex flex-col justify-center items-center text-center pt-24">
-          <h1 className="font-outfit font-semibold text-3xl md:text-4xl text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 border-primary-500">
+        <div className="flex flex-col items-center justify-center pt-24 text-center">
+          <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             All Testimonials
           </h1>
-          <p className="font-roboto text-lg md:text-xl text-secondary-500 mt-2 mb-8">
+          <p className="mt-2 text-center font-roboto text-secondary-500 md:text-lg">
             Hear Directly from All Our Clients
           </p>
-          <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
+          <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
         </div>
 
         <div className="flex items-center justify-center rounded-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {getCurrentPageFeedback().map((testimonial) => (
-              <Suspense key={testimonial.id} fallback={<span className="loading loading-spinner loading-lg"></span>}>
+              <Suspense
+                key={testimonial.id}
+                fallback={
+                  <span className="loading loading-spinner loading-lg"></span>
+                }
+              >
                 <TestimonialCard testimonial={testimonial} />
               </Suspense>
             ))}
@@ -52,17 +60,17 @@ const AllTestimonials = () => {
         </div>
 
         {/* Pagination Controls */}
-        <div className="flex justify-center mt-8 md:text-sm">
+        <div className="mt-8 flex justify-center md:text-sm">
           {currentPage > 1 && (
             <>
               <button
-                className="mx-[3px] md:mx-1 px-[5px] md:px-3 md:py-1 bg-secondary-200 rounded"
+                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(1)}
               >
                 First
               </button>
               <button
-                className="mx-[3px] md:mx-1 px-[5px] md:px-3 md:py-1 bg-secondary-200 rounded"
+                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage - 1)}
               >
                 Prev
@@ -72,8 +80,10 @@ const AllTestimonials = () => {
           {getPaginationGroup().map((pageNumber) => (
             <button
               key={pageNumber}
-              className={`mx-[3px] md:mx-1 px-[5px] md:px-3 md:py-1 rounded ${
-                currentPage === pageNumber ? "bg-primary-500 text-white" : "bg-secondary-200"
+              className={`mx-[3px] rounded px-[5px] md:mx-1 md:px-3 md:py-1 ${
+                currentPage === pageNumber
+                  ? "bg-primary-500 text-white"
+                  : "bg-secondary-200"
               }`}
               onClick={() => handleClick(pageNumber)}
             >
@@ -83,13 +93,13 @@ const AllTestimonials = () => {
           {currentPage < totalPages && (
             <>
               <button
-                className="mx-[3px] md:mx-1 px-[5px] md:px-3 md:py-1 bg-secondary-200 rounded"
+                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage + 1)}
               >
                 Next
               </button>
               <button
-                className="mx-[3px] md:mx-1 px-[5px] md:px-3 md:py-1 bg-secondary-200 rounded"
+                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(totalPages)}
               >
                 Last

@@ -13,14 +13,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative bg-secondary-950 border-t">
-      <Container className="max-w-[900px] pt-16 pb-8">
-        <div className="flex flex-col md:flex-row justify-between">
+    <div className="relative border-t bg-secondary-950">
+      <Container className="max-w-[900px] pb-8 pt-16">
+        <div className="flex flex-col justify-between md:flex-row">
           <div>
-            <p className="font-outfit text-white text-lg pb-8 uppercase">
+            <p className="pb-8 font-outfit text-lg uppercase text-white">
               Navigation
             </p>
-            <ul className="text-secondary-500 font-roboto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+            <ul className="grid grid-cols-2 gap-x-16 gap-y-2 font-roboto text-secondary-500 md:gap-y-4">
               <li className="py-1 hover:text-secondary-400">
                 <Link to="/">Home</Link>
               </li>
@@ -42,7 +42,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="mt-8 md:mt-0">
-            <h3 className="text-white font-outfit text-lg uppercase">
+            <h3 className="font-outfit text-lg uppercase text-white">
               Contact Information
             </h3>
             <div className="flex items-center">
@@ -50,7 +50,7 @@ const Footer = () => {
                 size={20}
                 className="text-secondary-500 hover:text-secondary-400"
               />
-              <p className="text-secondary-500 font-roboto mt-2 pl-4 my-1">
+              <p className="my-1 mt-2 pl-4 font-roboto text-secondary-500">
                 Meralco Industrial Engineering Services Corporation
                 <br />
                 5th Floor, Renaissance Tower 1000
@@ -67,44 +67,46 @@ const Footer = () => {
                 {ContactData.phoneNumbers.map((number, index) => (
                   <p
                     key={index}
-                    className="pl-4 font-roboto text-secondary-500 my-1"
+                    className="my-1 pl-4 font-roboto text-secondary-500"
                   >
                     {number}
                   </p>
                 ))}
               </div>
             </div>
-            <div className="text-secondary-500 font-roboto flex items-center">
+            <div className="flex items-center font-roboto text-secondary-500">
               <FaEnvelope
                 size={20}
                 className="text-secondary-500 hover:text-secondary-400"
               />
               <a
                 href={`mailto:${ContactData.email}`}
-                className="pl-4 font-roboto text-secondary-500 hover:underline my-1"
+                className="my-1 pl-4 font-roboto text-secondary-500 hover:underline"
               >
                 {ContactData.email}
               </a>
             </div>
-            <div className="mt-8">
-              <h3 className="text-white font-outfit text-lg uppercase">Social link</h3>
-              <div className="flex space-x-4 mt-2">
-                <a
-                  href={ContactData.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary-500 hover:text-secondary-400 my-1"
-                >
-                  <FaFacebookF size={20} />
-                </a>
-              </div>
+          </div>
+          <div>
+            <h3 className="font-outfit text-lg uppercase text-white pt-4 md:pt-0">
+              Social link
+            </h3>
+            <div className="mt-2 flex space-x-4">
+              <a
+                href={ContactData.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="my-1 text-secondary-500 hover:text-secondary-400"
+              >
+                <FaFacebookF size={20} />
+              </a>
             </div>
           </div>
         </div>
       </Container>
       <div className="bg-secondary-900/50 py-4">
         <Container>
-          <div className="text-secondary-300 text-center">
+          <div className="text-center text-sm text-secondary-300 md:text-base">
             Copyright &copy; {currentYear}. Meralco Industrial Engineering
             Services Corporation. All rights reserved.
           </div>
