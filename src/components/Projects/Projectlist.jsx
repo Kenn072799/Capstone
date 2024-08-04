@@ -23,7 +23,7 @@ const ProjectList = () => {
       </div>
       <div className="mt-8 text-center flex justify-center">
         <Link
-          to="/projects/all/"
+          to="/Mrquickfix/projects/all/"
           onClick={handleScrollToTop}
           className="text-white bg-primary-500 rounded-3xl hover:bg-primary-400 flex items-center"
         >

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import customerFeedback from "../../data/CustomerFeedbackData";
-import TestimonialCard from "./testimonialsCard";
 import Container from "../Container";
+
+const TestimonialCard = lazy(() => import('./testimonialsCard'));
 
 const AllTestimonials = () => {
   const testimonialsPerPage = 10;
@@ -43,7 +44,9 @@ const AllTestimonials = () => {
         <div className="flex items-center justify-center rounded-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {getCurrentPageFeedback().map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              <Suspense key={testimonial.id} fallback={<span className="loading loading-spinner loading-lg"></span>}>
+                <TestimonialCard testimonial={testimonial} />
+              </Suspense>
             ))}
           </div>
         </div>

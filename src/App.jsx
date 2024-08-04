@@ -10,11 +10,11 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/projects/all/",
+    path: "/Mrquickfix/projects/all/",
     element: <Projectpage />,
   },
   {
-    path: "/testimonials/all/",
+    path: "/Mrquickfix/testimonials/all/",
     element: <AllTestimonialpage />,
   },
 ]);

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { PiArrowRightLight } from "react-icons/pi";
 import Container from "../Container";
 import customerFeedback from "../../data/CustomerFeedbackData";
-const TestimonialsCard = lazy(() => import('./testimonialsCard'));
+
+const TestimonialCard = lazy(() => import('./testimonialsCard'));
 
 const Testimonials = () => {
   const testimonialsPerPage = 5;
@@ -67,7 +68,7 @@ const Testimonials = () => {
               {getCurrentPageFeedback().map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0">
                   <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
-                  <TestimonialsCard />
+                    <TestimonialCard testimonial={testimonial} />
                   </Suspense>
                 </div>
               ))}
@@ -90,7 +91,7 @@ const Testimonials = () => {
 
         <div className="mt-8 text-center flex justify-center">
           <Link
-            to="/testimonials/all/"
+            to="/Mrquickfix/testimonials/all/"
             onClick={handleScrollToTop}
             className="text-white bg-primary-500 rounded-3xl hover:bg-primary-400 flex items-center"
           >
