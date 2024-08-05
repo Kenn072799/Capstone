@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import { PiArrowRightLight } from "react-icons/pi";
 import Container from "../Container";
 import customerFeedback from "../../data/CustomerFeedbackData";
@@ -46,7 +46,11 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-white py-4">
+    <div
+      id="testimonials"
+      name="testimonials"
+      className="relative bg-white py-24"
+    >
       <Container>
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
@@ -95,11 +99,11 @@ const Testimonials = () => {
 
         <div className="mt-8 flex justify-center text-center">
           <Link
-            to="/Mrquickfix/testimonials/all/"
+            to="/Mrquickfix/test2"
             onClick={handleScrollToTop}
             className="flex items-center rounded-3xl bg-primary-500 text-white hover:bg-primary-400"
           >
-            <div className="flex items-center px-5 py-3 text-sm md:text-base transition hover:translate-x-2 md:px-6 md:py-4">
+            <div className="flex items-center px-5 py-3 text-sm transition hover:translate-x-2 md:px-6 md:py-4 md:text-base">
               See more testimonials
               <PiArrowRightLight className="ml-2" size={20} />
             </div>

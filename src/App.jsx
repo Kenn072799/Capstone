@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Projectpage from "./pages/Projectpage";
 import AllTestimonialpage from "./pages/AllTestimonialpage";
+import MainNav from "./components/Navigation/Mainnav";
 
 const router = createBrowserRouter([
   {
@@ -10,17 +11,22 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/Mrquickfix/projects/all/",
+    path: "/Mrquickfix/test",
     element: <Projectpage />,
   },
   {
-    path: "/Mrquickfix/testimonials/all/",
+    path: "/Mrquickfix/test2",
     element: <AllTestimonialpage />,
   },
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider router={router}>
+      <MainNav />
+      {/* other components if needed */}
+    </RouterProvider>
+  );
 };
 
 export default App;

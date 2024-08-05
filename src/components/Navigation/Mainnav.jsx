@@ -2,17 +2,29 @@ import React, { useState, useEffect } from "react";
 import Container from "../Container";
 import { HiMenu, HiX } from "react-icons/hi";
 import Mainlogo from "../../assets/Mr.QuickFixLogo.png";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { scroller } from "react-scroll";
+import useNavigateAndScroll from "../useNavigateAndScroll";
 
 const MainNav = () => {
+  const path = useLocation().pathname;
+  const location = path.split("/")[2];
+  const navigateAndScroll = useNavigateAndScroll();
   const [open, setOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
       if (window.innerWidth >= 1024) {
         setOpen(false);
       }
@@ -25,17 +37,70 @@ const MainNav = () => {
     };
   }, []);
 
-  const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "about",
+        "services",
+        "project",
+        "testimonials",
+        "contact",
+      ];
+      const scrollY = window.scrollY;
+
+      let currentSection = "";
+      sections.forEach((section) => {
+        const sectionElement = document.getElementById(section);
+        if (sectionElement) {
+          const offsetTop = sectionElement.offsetTop;
+          const offsetHeight = sectionElement.offsetHeight;
+          if (
+            scrollY >= offsetTop - 75 &&
+            scrollY < offsetTop + offsetHeight - 75
+          ) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveLink(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleNavigationAndScroll = (selector) => {
+    let offset = -75;
+    if (isMobile) {
+      offset = -20;
+    }
+
+    if (location === "test" || location === "test2") {
+      navigateAndScroll("/Mrquickfix/", selector);
+    } else {
+      scroller.scrollTo(selector, {
+        duration: 800,
+        smooth: true,
+        offset,
+        spy: true,
+      });
+    }
   };
 
   return (
-    <div className="sticky top-0 z-10 w-full border-b border-secondary-100 bg-white shadow-sm">
+    <div
+      id="mainnav"
+      className="sticky top-0 z-10 w-full border-b border-secondary-100 bg-white shadow-sm"
+    >
       <Container className="flex items-center justify-between py-4">
-        <Link to="/Mrquickfix/" onClick={handleScrollToTop}>
+        <Link
+          to="/Mrquickfix/"
+          onClick={() => handleNavigationAndScroll("home")}
+        >
           <img
             className="h-9 cursor-pointer md:h-12"
             src={Mainlogo}
@@ -44,29 +109,46 @@ const MainNav = () => {
         </Link>
         <ul className="hidden cursor-pointer items-center font-roboto text-secondary-800 lg:flex">
           <li
-            className="ml-8 inline-block hover:text-primary-500"
-            onClick={handleScrollToTop}
+            className={`ml-8 inline-block hover:text-primary-500 ${activeLink === "home" ? "text-primary-500" : ""}`}
           >
-            <Link to="/Mrquickfix/">Home</Link>
+            <button onClick={() => handleNavigationAndScroll("home")}>
+              Home
+            </button>
           </li>
-          <li className="ml-8 inline-block hover:text-primary-500">
-            <Link to="/about">About us</Link>
+          <li
+            className={`ml-8 inline-block hover:text-primary-500 ${activeLink === "about" ? "text-primary-500" : ""}`}
+          >
+            <button onClick={() => handleNavigationAndScroll("about")}>
+              About us
+            </button>
           </li>
-          <li className="ml-8 inline-block hover:text-primary-500">
-            <Link to="/services">Services</Link>
+          <li
+            className={`ml-8 inline-block hover:text-primary-500 ${activeLink === "services" ? "text-primary-500" : ""}`}
+          >
+            <button onClick={() => handleNavigationAndScroll("services")}>
+              Services
+            </button>
           </li>
-          <li className="ml-8 inline-block hover:text-primary-500">
-            <Link to="/projects">Projects</Link>
+          <li
+            className={`ml-8 inline-block hover:text-primary-500 ${activeLink === "project" ? "text-primary-500" : ""}`}
+          >
+            <button onClick={() => handleNavigationAndScroll("project")}>
+              Projects
+            </button>
           </li>
-          <li className="ml-8 inline-block hover:text-primary-500">
-            <Link to="/testimonials">Testimonials</Link>
+          <li
+            className={`ml-8 inline-block hover:text-primary-500 ${activeLink === "testimonials" ? "text-primary-500" : ""}`}
+          >
+            <button onClick={() => handleNavigationAndScroll("testimonials")}>
+              Testimonials
+            </button>
           </li>
           <li className="ml-8 inline-block hover:text-secondary-100">
-            <Link to="/contact">
-              <button className="rounded-3xl bg-primary-500 px-6 py-2 text-white hover:bg-primary-400">
+            <button onClick={() => handleNavigationAndScroll("contact")}>
+              <span className="rounded-3xl bg-primary-500 px-6 py-2 text-white hover:bg-primary-400">
                 Contact us
-              </button>
-            </Link>
+              </span>
+            </button>
           </li>
         </ul>
         <div className="lg:hidden" onClick={handleClick}>
@@ -84,25 +166,48 @@ const MainNav = () => {
           open ? "block" : "hidden"
         } bg-tertiary absolute flex w-full cursor-pointer flex-col border-b border-secondary-100 bg-white font-roboto text-secondary-950 shadow-sm`}
       >
-        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
-          <Link to="/" onClick={handleScrollToTop}>
+        <li
+          className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "home" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
+          onClick={handleClose}
+        >
+          <Link onClick={() => handleNavigationAndScroll("home")}>
             Home
           </Link>
         </li>
-        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
-          <Link to="/about">About us</Link>
+        <li
+          className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "about" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
+          onClick={handleClose}
+        >
+          <Link onClick={() => handleNavigationAndScroll("about")}>
+            About us
+          </Link>
         </li>
-        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
-          <Link to="/services">Services</Link>
+        <li
+          className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "services" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
+          onClick={handleClose}
+        >
+          <Link onClick={() => handleNavigationAndScroll("services")}>
+            Services
+          </Link>
         </li>
-        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
-          <Link to="/projects">Projects</Link>
+        <li
+          className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "project" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
+          onClick={handleClose}
+        >
+          <Link onClick={() => handleNavigationAndScroll("project")}>
+            Projects
+          </Link>
         </li>
-        <li className="mx-8 flex justify-center border-b border-secondary-200 py-2 active:bg-secondary-50 active:text-primary-500">
-          <Link to="/testimonials">Testimonials</Link>
+        <li
+          className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "testimonials" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
+          onClick={handleClose}
+        >
+          <Link onClick={() => handleNavigationAndScroll("testimonials")}>
+            Testimonials
+          </Link>
         </li>
-        <li className="mx-auto py-4">
-          <Link to="/contact">
+        <li className="mx-auto py-4" onClick={handleClose}>
+          <Link onClick={() => handleNavigationAndScroll("contact")}>
             <button className="rounded-3xl bg-primary-500 px-6 py-2 text-white hover:bg-primary-400">
               Contact us
             </button>

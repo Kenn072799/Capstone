@@ -5,7 +5,7 @@ import { Servicedata } from "../../data/ServiceData";
 
 const Services = () => {
   return (
-    <div className="relative bg-white py-2 pb-24">
+    <div id="services" name="services" className="relative bg-white py-24">
       <Container>
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">

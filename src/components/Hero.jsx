@@ -18,7 +18,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center">
+    <div id="home" name="home" className="relative flex h-screen w-full items-center justify-center">
       {loading && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-gray-200">
           <span className="loading loading-spinner loading-lg"></span>

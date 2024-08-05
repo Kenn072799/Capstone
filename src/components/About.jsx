@@ -24,7 +24,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-white relative py-24">
+    <div id="about" name="about" className="bg-white relative py-24">
       <Container>
         <div className="flex flex-col justify-center items-center text-center">
           <h1
