@@ -79,7 +79,7 @@ const MainNav = () => {
       offset = -20;
     }
 
-    if (location === "test" || location === "test2") {
+    if (location === "projects" || location === "testimonials") {
       navigateAndScroll("/Mrquickfix/", selector);
     } else {
       scroller.scrollTo(selector, {

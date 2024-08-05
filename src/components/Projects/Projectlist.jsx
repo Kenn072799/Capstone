@@ -25,7 +25,7 @@
         </div>
         <div className="mt-8 flex justify-center text-center">
           <Link
-            to="/Mrquickfix/test2"
+            to="/Mrquickfix/projects/"
             onClick={handleScrollToTop}
             className="flex items-center rounded-3xl bg-primary-500 text-white hover:bg-primary-400"
           >

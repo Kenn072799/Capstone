@@ -11,11 +11,11 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/Mrquickfix/test",
+    path: "/Mrquickfix/projects/",
     element: <Projectpage />,
   },
   {
-    path: "/Mrquickfix/test2",
+    path: "/Mrquickfix/testimonials/",
     element: <AllTestimonialpage />,
   },
 ]);
