@@ -3,7 +3,7 @@ import { FaQuoteLeft } from "react-icons/fa6";
 
 const testimonialCard = ({ testimonial }) => {
   return (
-    <div className="testimonial-card relative my-24 max-w-2xl rounded-2xl border border-secondary-200 bg-secondary-50 px-10 py-4 text-center shadow-sm md:mx-10">
+    <div className="testimonial-card relative mt-24 max-w-2xl rounded-2xl border border-secondary-200 bg-secondary-50 px-10 py-4 text-center shadow-sm md:mx-10">
       <div className="flex justify-center">
         <FaQuoteLeft className="-mt-12 bg-transparent text-7xl text-primary-500 xxs:mr-7 xxs:text-6xl md:mr-14" />
         <img

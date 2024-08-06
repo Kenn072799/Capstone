@@ -60,7 +60,7 @@ const AllTestimonials = () => {
         </div>
 
         {/* Pagination Controls */}
-        <div className="mt-8 flex justify-center md:text-sm">
+        <div className="mt-8 flex justify-center md:text-sm pb-24">
           {currentPage > 1 && (
             <>
               <button

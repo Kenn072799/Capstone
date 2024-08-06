@@ -4,7 +4,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import Mainlogo from "../../assets/Mr.QuickFixLogo.png";
 import { useLocation, Link } from "react-router-dom";
 import { scroller } from "react-scroll";
-import useNavigateAndScroll from "../useNavigateAndScroll";
+import useNavigateAndScroll from "../hooks/useNavigateAndScroll";
 
 const MainNav = () => {
   const path = useLocation().pathname;
@@ -170,9 +170,7 @@ const MainNav = () => {
           className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "home" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}
           onClick={handleClose}
         >
-          <Link onClick={() => handleNavigationAndScroll("home")}>
-            Home
-          </Link>
+          <Link onClick={() => handleNavigationAndScroll("home")}>Home</Link>
         </li>
         <li
           className={`mx-8 flex justify-center border-b border-secondary-200 py-2 ${activeLink === "about" ? "text-primary-500" : ""} active:bg-secondary-50 active:text-primary-500`}

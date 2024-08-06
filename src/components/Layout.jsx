@@ -1,7 +1,7 @@
 import React from "react";
-import Topnav from "./Navigation/TopNav";
-import Mainnav from "./Navigation/Mainnav";
 import Topline from "./Navigation/TopLine";
+import Topnav from "./Navigation/Topnav";
+import Mainnav from "./Navigation/Mainnav";
 import Footer from "./Footer";
 
 export const Layout = ({ children }) => {
