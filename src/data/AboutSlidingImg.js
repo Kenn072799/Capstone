@@ -1,7 +1,7 @@
 import AboutIMG from "../assets/AboutIMG.jpg";
 import AboutIMG2 from "../assets/AboutIMG_2.jpg";
 
-const aboutImages = [
+const AboutSlidingImg = [
     {
         slideimg: AboutIMG 
     },
@@ -11,4 +11,4 @@ const aboutImages = [
     // Add more slide as needed
 ];
 
-export default aboutImages;
+export default AboutSlidingImg;

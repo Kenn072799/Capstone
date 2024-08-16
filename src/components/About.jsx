@@ -4,9 +4,8 @@ import {
   FaHouseCrack,
   FaHammer,
   FaHouseCircleCheck,
-  FaCheck,
 } from "react-icons/fa6";
-import aboutImages from "../data/AboutData";
+import aboutImages from "../data/AboutSlidingImg";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
