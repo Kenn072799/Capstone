@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ProjectData } from "../../data/ProjectDetails";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../Projects/Projectcard";
 import Container from "../Container";
 
 const AllProjects = () => {
