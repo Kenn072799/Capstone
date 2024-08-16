@@ -1,5 +1,5 @@
 import React from "react";
-import Topline from "./Navigation/topLine";
+import Topline from "../components/Navigation/Line";
 import Topnav from "./Navigation/Topnav";
 import Mainnav from "./Navigation/Mainnav";
 import Footer from "./Footer";
