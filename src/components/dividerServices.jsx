@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./Container";
-import DividerIMG from "../../assets/DividerIMG.jpg";
+import DividerIMG from "../assets/DividerIMG.jpg";
 
 const DividerServices = () => {
   return (
