@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ProjectData } from "../../data/ProjectData";
+import { ProjectData } from "../../data/ProjectDetails";
 import ProjectCard from "./ProjectCard";
 import Container from "../Container";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import { PiArrowRightLight } from "react-icons/pi";
 import ProjectCard from "./ProjectCard";
-import { ProjectData } from "../../data/ProjectData";
+import { ProjectData } from "../../data/ProjectDetails";
 
 const Projectlist = () => {
   const latestProjects = ProjectData.sort(
