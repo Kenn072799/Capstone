@@ -21,7 +21,7 @@ const Footer = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
       if (window.innerWidth >= 1024) {
-        setOpen(false);
+        setIsMobile(false);
       }
     };
 
@@ -119,12 +119,13 @@ const Footer = () => {
               />
               <div className="flex flex-col">
                 {ContactData.phoneNumbers.map((number, index) => (
-                  <p
+                  <a
                     key={index}
-                    className="my-1 pl-4 font-roboto text-secondary-500"
+                    href={`tel:${number.replace(/\s+/g, "")}`}
+                    className="my-1 pl-4 font-roboto text-secondary-500 hover:underline"
                   >
                     {number}
-                  </p>
+                  </a>
                 ))}
               </div>
             </div>

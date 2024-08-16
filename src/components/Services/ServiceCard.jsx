@@ -26,7 +26,7 @@ const ServiceCard = ({ serviceData }) => {
   return (
     <div
       ref={ref}
-      className="rounded-2xl border border-secondary-100 bg-white shadow-md"
+      className="rounded-2xl bg-white shadow-md"
     >
       {!inView ? (
         <SkeletonServiceCard />

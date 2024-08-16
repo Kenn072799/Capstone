@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../components/Layout";
 import AllTestimonials from "../components/Testimonials/AllTestimonials";
 import DividerServices from "../components/Services/DividerServices";
 
 const AllTestimonialpage = () => {
+  useEffect(() => {
+    document.title = "Mr. Quick Fix | Testimonials";
+  }, []);
+
   return (
     <Layout>
       <AllTestimonials />

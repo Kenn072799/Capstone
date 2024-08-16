@@ -63,7 +63,10 @@ const Testimonials = () => {
         </div>
 
         {/* Carousel */}
-        <div className="border-box overflow-hidden">
+        <div className="border-box relative overflow-hidden">
+          <div className="pointer-events-none absolute left-0 top-0 z-[1] hidden h-full w-28 bg-gradient-to-r from-white/90 to-transparent md:block"></div>
+          <div className="pointer-events-none absolute right-0 top-0 z-[1] hidden h-full w-28 bg-gradient-to-l from-white/90 to-transparent md:block"></div>
+
           <div className="relative mx-auto max-w-2xl rounded-2xl py-4">
             <div
               className="flex transition-transform duration-500 ease-in-out"

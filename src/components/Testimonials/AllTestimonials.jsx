@@ -60,17 +60,17 @@ const AllTestimonials = () => {
         </div>
 
         {/* Pagination Controls */}
-        <div className="mt-8 flex justify-center md:text-sm pb-24">
+        <div className="mb-24 mt-14 flex justify-center border-b border-t py-2 md:text-sm">
           {currentPage > 1 && (
             <>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(1)}
               >
                 First
               </button>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage - 1)}
               >
                 Prev
@@ -81,9 +81,7 @@ const AllTestimonials = () => {
             <button
               key={pageNumber}
               className={`mx-[3px] rounded px-[5px] md:mx-1 md:px-3 md:py-1 ${
-                currentPage === pageNumber
-                  ? "bg-primary-500 text-white"
-                  : "bg-secondary-200"
+                currentPage === pageNumber ? "bg-secondary-200" : ""
               }`}
               onClick={() => handleClick(pageNumber)}
             >
@@ -93,13 +91,13 @@ const AllTestimonials = () => {
           {currentPage < totalPages && (
             <>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage + 1)}
               >
                 Next
               </button>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(totalPages)}
               >
                 Last

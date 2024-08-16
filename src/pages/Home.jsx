@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services/Services";
@@ -9,6 +9,10 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import Contact from "../components/Contact";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Mr. Quick Fix | Specializing in Home Repair and Improvements";
+  }, []);
+
   return (
     <Layout>
       <Hero />

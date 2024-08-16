@@ -22,23 +22,27 @@ const Contact = () => {
           <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
         </div>
         <h2 className="font-roboto text-2xl font-semibold text-secondary-900">
-          Have a project in mind?
+          Consult us to discuss how we can help.
         </h2>
         <p className="font-roboto text-secondary-500 md:text-xl">
-          Contact us to discuss how we can help.
+          If you have any questions, please feel free to contact us.
         </p>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <div className="mt-4">
+          <div className="mt-4 text-sm md:text-base">
             <div className="my-4 flex">
-              <FaPhone size={20} className="text-primary-500" />
+              <FaPhone
+                size={20}
+                className="text-primary-500"
+              />
               <div className="flex flex-col">
                 {ContactData.phoneNumbers.map((number, index) => (
-                  <p
+                  <a
                     key={index}
-                    className="pl-4 font-roboto text-secondary-500"
+                    href={`tel:${number.replace(/\s+/g, "")}`}
+                    className="my-1 pl-4 font-roboto text-secondary-500 hover:underline"
                   >
                     {number}
-                  </p>
+                  </a>
                 ))}
               </div>
             </div>
@@ -51,7 +55,7 @@ const Contact = () => {
                 {ContactData.email}
               </a>
             </div>
-            <div className="my-4 flex">
+            <div className="my-4 flex min-w-fit">
               <FaFacebookF size={20} className="text-primary-500" />
               <a
                 href={ContactData.facebook}
@@ -71,14 +75,14 @@ const Contact = () => {
             </div>
           </div>
           <div>
-            <form className="space-y-4">
+            <form className="max-w-[450px] space-y-4">
               <div>
                 <input
                   type="text"
                   name="name"
                   required="required"
                   placeholder="Name:"
-                  className="mt-1 block w-full rounded-xl border border-gray-300 p-3 focus:outline-primary-500"
+                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
                 />
               </div>
               <div>
@@ -87,7 +91,7 @@ const Contact = () => {
                   name="email"
                   required="required"
                   placeholder="Email:"
-                  className="mt-1 block w-full rounded-xl border border-gray-300 p-3 focus:outline-primary-500"
+                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
                 />
               </div>
               <div>
@@ -96,7 +100,7 @@ const Contact = () => {
                   name="number"
                   required="required"
                   placeholder="Number: "
-                  className="mt-1 block w-full rounded-xl border border-gray-300 p-3 focus:outline-primary-500"
+                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
                 />
               </div>
               <div>
@@ -105,13 +109,13 @@ const Contact = () => {
                   name="message"
                   required="required"
                   placeholder="Tell me about your needs:"
-                  className="mt-1 block w-full rounded-xl border border-gray-300 p-3 focus:outline-primary-500"
+                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
                 />
               </div>
               <div className="flex max-w-32 justify-center rounded-3xl bg-primary-500 text-white hover:bg-primary-400">
                 <button
                   type="submit"
-                  className="flex items-center text-sm md:text-base px-5 py-3 md:px-6 md:py-4"
+                  className="flex items-center px-5 py-3 text-sm md:px-6 md:py-4 md:text-base"
                 >
                   Submit
                 </button>

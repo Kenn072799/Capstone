@@ -20,10 +20,15 @@ const AllProjects = () => {
     "Household Cleaning Services",
   ];
 
-  const sortedProjects = ProjectData.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const filteredProjects = selectedCategory === "Latest"
-    ? sortedProjects
-    : sortedProjects.filter(project => project.category.includes(selectedCategory));
+  const sortedProjects = ProjectData.sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  const filteredProjects =
+    selectedCategory === "Latest"
+      ? sortedProjects
+      : sortedProjects.filter((project) =>
+          project.category.includes(selectedCategory),
+        );
 
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
@@ -58,7 +63,7 @@ const AllProjects = () => {
           <h1 className="mt-5 border-l-8 border-primary-500 py-1 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             All Projects
           </h1>
-          <p className="mt-2 text-center font-roboto md:text-lg text-secondary-500">
+          <p className="mt-2 text-center font-roboto text-secondary-500 md:text-lg">
             A showcase of our excellence in every project.
           </p>
         </div>
@@ -118,17 +123,17 @@ const AllProjects = () => {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        <div className="mt-8 flex justify-center md:text-sm">
+        <div className="mb-24 mt-14 flex justify-center border-b border-t py-2 md:text-sm">
           {currentPage > 1 && (
             <>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(1)}
               >
                 First
               </button>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage - 1)}
               >
                 Prev
@@ -139,9 +144,7 @@ const AllProjects = () => {
             <button
               key={pageNumber}
               className={`mx-[3px] rounded px-[5px] md:mx-1 md:px-3 md:py-1 ${
-                currentPage === pageNumber
-                  ? "bg-primary-500 text-white"
-                  : "bg-secondary-200"
+                currentPage === pageNumber ? "bg-secondary-200" : ""
               }`}
               onClick={() => handleClick(pageNumber)}
             >
@@ -151,13 +154,13 @@ const AllProjects = () => {
           {currentPage < totalPages && (
             <>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(currentPage + 1)}
               >
                 Next
               </button>
               <button
-                className="mx-[3px] rounded bg-secondary-200 px-[5px] md:mx-1 md:px-3 md:py-1"
+                className="mx-[3px] px-[5px] md:mx-1 md:px-3 md:py-1"
                 onClick={() => handleClick(totalPages)}
               >
                 Last

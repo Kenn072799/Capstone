@@ -24,55 +24,43 @@ const About = () => {
   };
 
   return (
-    <div id="about" name="about" className="bg-white relative py-24">
+    <div id="about" name="about" className="relative bg-white py-24">
       <Container>
-        <div className="flex flex-col justify-center items-center text-center">
-          <h1
-            className="font-outfit font-semibold text-3xl md:text-4xl
-          text-secondary-950 mt-5 md:mt-0 text-left uppercase border-l-8 pl-4 mb-8 border-primary-500"
-          >
+        <div className="flex flex-col items-center justify-center text-center">
+          <h1 className="mb-8 mt-5 border-l-8 border-primary-500 pl-4 text-left font-outfit text-3xl font-semibold uppercase text-secondary-950 md:mt-0 md:text-4xl">
             About Mr. Quick Fix
           </h1>
-          <div className="flex flex-col pt-10 sm:flex-row xs:pt-8">
-            <div className="w-full h-auto py-4 px-2 my-3">
-              <FaHouseCrack className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
-              <h3
-                className="text-secondary-700 font-outfit pt-3
-            md:text-lg md:mx-0 md:my-0 md:py-2"
-              >
+          <div className="flex flex-col sm:flex-row md:pt-10">
+            <div className="my-3 h-auto w-full px-2 py-4">
+              <FaHouseCrack className="mx-auto mb-4 rounded-2xl border border-none bg-primary-100 p-3 text-5xl text-primary-500 sm:text-6xl" />
+              <h3 className="pt-3 font-outfit text-secondary-700 md:mx-0 md:my-0 md:py-2 md:text-lg">
                 Specializing in Home Repair and Improvements.
               </h3>
             </div>
-            <div className="w-full h-auto py-4 px-2 xs:my-3">
-              <FaHammer className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
-              <h3
-                className="text-secondary-700 font-outfit pt-3
-            md:text-lg md:mx-0 md:my-0 md:py-2"
-              >
+            <div className="h-auto w-full px-2 py-4 xs:my-3">
+              <FaHammer className="mx-auto mb-4 rounded-2xl border border-none bg-primary-100 p-3 text-5xl text-primary-500 sm:text-6xl" />
+              <h3 className="pt-3 font-outfit text-secondary-700 md:mx-0 md:my-0 md:py-2 md:text-lg">
                 Committed to Excellence and Quality Craftsmanship in Every
                 Project.
               </h3>
             </div>
-            <div className="w-full h-auto py-4 px-2 xs:my-3">
-              <FaHouseCircleCheck className="text-primary-500 text-5xl sm:text-6xl mx-auto bg-primary-100 border-none rounded-2xl p-3 border mb-4" />
-              <h3
-                className="text-secondary-700 font-outfit pt-3
-            md:text-lg md:mx-0 md:my-0 md:py-2"
-              >
+            <div className="h-auto w-full px-2 py-4 xs:my-3">
+              <FaHouseCircleCheck className="mx-auto mb-4 rounded-2xl border border-none bg-primary-100 p-3 text-5xl text-primary-500 sm:text-6xl" />
+              <h3 className="pt-3 font-outfit text-secondary-700 md:mx-0 md:my-0 md:py-2 md:text-lg">
                 Your Trusted Partner for All Home Maintenance and Renovation
                 Needs.
               </h3>
             </div>
           </div>
         </div>
-        <div className="h-[1px] w-full bg-secondary-100 my-8"></div>
-        <div className="flex flex-col lg:flex-row md:gap-4 z-10">
+        <div className="my-8 h-[1px] w-full bg-secondary-100"></div>
+        <div className="z-10 flex flex-col md:gap-4 lg:flex-row">
           <div className="carousel relative basis-[50%]">
             {aboutImages.map((image, index) => (
               <div
                 key={index}
                 id={`item${index + 1}`}
-                className={`carousel-item w-full h-auto ${
+                className={`carousel-item h-auto w-full ${
                   index === currentIndex ? "block" : "hidden"
                 }`}
               >
@@ -90,7 +78,7 @@ const About = () => {
                       <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`h-3 w-3 mx-1 rounded-full ${
+                        className={`mx-1 h-3 w-3 rounded-full ${
                           currentIndex === index
                             ? "bg-white/80"
                             : "bg-secondary-100 bg-opacity-50"
@@ -102,31 +90,25 @@ const About = () => {
               </div>
             ))}
           </div>
-          <div className="basis-[50%] text-center">
-            <p className="text-secondary-500 text-justify font-roboto md:[word-spacing:4px] text-sm pt-4 md:pt-0 md:text-base flex">
-              <span className="pr-2 text-green-500 mt-1">
-                <FaCheck />
-              </span>
+          <div className="basis-[50%] text-pretty">
+            <p className="flex pt-4 font-roboto text-sm text-secondary-500 md:pt-0 md:text-base md:[word-spacing:4px]">
+              <span className="mt-1 pr-2 text-green-500"></span>
               At Mr. Quick Fix, we understand the importance of a
               well-maintained home. Our team of skilled professionals is
               dedicated to providing fast, efficient, and reliable repair
               services to ensure your home is safe, comfortable, and looking its
               best.
             </p>
-            <p className="text-secondary-500 text-justify font-roboto md:[word-spacing:4px] text-sm pt-4 md:pt-0 md:text-base flex">
-              <span className="pr-2 text-green-500 mt-1">
-                <FaCheck />
-              </span>
+            <p className="flex pt-4 font-roboto text-sm text-secondary-500 md:pt-0 md:text-base md:[word-spacing:4px]">
+              <span className="mt-1 pr-2 text-green-500"></span>
               With years of experience in the industry, we pride ourselves on
               our ability to tackle any repair or renovation project, big or
               small. Whether it's a leaky faucet, a complete kitchen makeover,
               or regular maintenance tasks, we have the expertise to get the job
               done right.
             </p>
-            <p className="text-secondary-500 text-justify font-roboto md:[word-spacing:4px] text-sm pt-4 md:pt-0 md:text-base flex">
-              <span className="pr-2 text-green-500 mt-1">
-                <FaCheck />
-              </span>
+            <p className="flex pt-4 font-roboto text-sm text-secondary-500 md:pt-0 md:text-base md:[word-spacing:4px]">
+              <span className="mt-1 pr-2 text-green-500"></span>
               We believe in transparency and communication, ensuring that our
               clients are informed and involved every step of the way. Our
               commitment to customer satisfaction drives us to go above and
