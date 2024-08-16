@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../Container";
 import DividerIMG from "../../assets/DividerIMG.jpg";
 
-const dividerServices = () => {
+const DividerServices = () => {
   return (
     // Divider section after services section shown to make user contact us more easily
     <div className="relative">
@@ -29,4 +29,4 @@ const dividerServices = () => {
   );
 };
 
-export default dividerServices;
+export default DividerServices;

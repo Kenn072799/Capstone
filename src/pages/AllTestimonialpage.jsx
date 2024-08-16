@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Layout } from "../components/Layout";
 import AllTestimonials from "../components/Testimonials/AllTestimonials";
-import DividerServices from "../components/Services/DividerServices";
+import DividerServices from "../components/Services/dividerServices";
 
 const AllTestimonialpage = () => {
   useEffect(() => {

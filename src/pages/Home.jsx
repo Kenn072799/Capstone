@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services/Services";
-import DividerServices from "../components/Services/DividerServices";
+import DividerServices from "../components/Services/dividerServices";
 import Project from "../components/Projects/Project";
 import { Layout } from "../components/Layout";
 import Testimonials from "../components/Testimonials/Testimonials";

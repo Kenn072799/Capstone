@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ProjectData } from "../data/ProjectData";
-import ProjectCard from "./Projects/ProjectCard";
-import Container from "./Container";
+import { ProjectData } from "../../data/ProjectData";
+import ProjectCard from "./ProjectCard";
+import Container from "../Container";
 
 const AllProjects = () => {
   const [selectedCategory, setSelectedCategory] = useState("Latest");
