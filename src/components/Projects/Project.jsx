@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../Container";
-import ProjectList from "./ProjectList";
+import ProjectList from "./Projectlist";
 
 const Project = () => (
   <div id="project" name="project" className="relative bg-white py-24">
