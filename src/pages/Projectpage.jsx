@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AllProject from "../components/Projects/AllProject";
 import { Layout } from "../components/Layout";
-import DividerServices from "../components/Services/dividerServices";
+import DividerServices from "../components/dividerServices";
 
 const Projectpage = () => {
   useEffect(() => {
