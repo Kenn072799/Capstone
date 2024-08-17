@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import Sidebar from "../components/Admin/AdminPanel/Sidebar";
+import NavBar from "../components/Admin/AdminPanel/NavBar";
+import Dashboard from "../components/Admin/AdminPanel/Dashboard";
 
 const AdminPanelpage = () => {
   useEffect(() => {
@@ -6,29 +9,13 @@ const AdminPanelpage = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-secondary-50">
-      <div>
-        <sidebar>
-          <ul>
-            <li>Dashboard</li>
-            <li>Projects</li>
-            <li>Chart</li>
-            <li>Content Management</li>
-            <ul>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Projects</li>
-              <li>Testimonials</li>
-              <li>Contact Us</li>
-            </ul>
-            <li>Add Account</li>
-            <li>My Profile</li>
-            <li>Logout</li>
-          </ul>
-        </sidebar>
+    <>
+      <Sidebar />
+      <div className='md:ml-64'>
+      <NavBar />
+      <Dashboard />
       </div>
-    </div>
+    </>
   );
 };
 
