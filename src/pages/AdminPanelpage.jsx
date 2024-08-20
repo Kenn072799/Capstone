@@ -11,9 +11,9 @@ const AdminPanelpage = () => {
   return (
     <>
       <Sidebar />
-      <div className='md:ml-64'>
-      <NavBar />
-      <Dashboard />
+      <div className="md:ml-64">
+        <NavBar />
+        <Dashboard />
       </div>
     </>
   );

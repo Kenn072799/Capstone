@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "./Container";
 import DividerIMG from "../assets/DividerIMG.jpg";
+import ConsultationModal from "./ConsultationModal";
 
 const DividerServices = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     // Divider section after services section shown to make user contact us more easily
     <div className="relative">
@@ -19,12 +30,18 @@ const DividerServices = () => {
             Reach out to us for a free consultation.
           </p>
           <div className="flex justify-center">
-            <button className="mt-4 rounded-3xl bg-primary-500 px-6 py-2 font-roboto text-sm text-white hover:bg-primary-400 md:text-base">
+            <button
+              onClick={openModal} // Open the modal on click
+              className="mt-4 rounded-3xl bg-primary-500 px-6 py-2 font-roboto text-sm text-white hover:bg-primary-400 md:text-base"
+            >
               Contact us now
             </button>
           </div>
         </Container>
       </div>
+
+      {/* Render the modal */}
+      <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

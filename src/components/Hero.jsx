@@ -4,9 +4,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Background from "../assets/Background.png";
 import { PiArrowRightLight } from "react-icons/pi";
+import ConsultationModal from "./ConsultationModal";
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
   useEffect(() => {
     const img = new Image();
@@ -16,6 +18,14 @@ const Hero = () => {
       Aos.init();
     };
   }, []);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div id="home" name="home" className="relative flex h-screen w-full items-center justify-center">
@@ -53,7 +63,10 @@ const Hero = () => {
               reliable and professional.
             </h2>
             <div className="mx-auto my-6 flex">
-              <button className="flex items-center rounded-3xl bg-primary-500 font-roboto text-white hover:bg-primary-400">
+              <button
+                onClick={openModal}
+                className="flex items-center rounded-3xl bg-primary-500 font-roboto text-white hover:bg-primary-400"
+              >
                 <div className="flex items-center px-5 py-3 text-sm transition hover:translate-x-2 md:px-6 md:py-4 md:text-base">
                   Schedule your free consultation
                   <PiArrowRightLight className="ml-2" size={20} />
@@ -63,6 +76,9 @@ const Hero = () => {
           </div>
         </Container>
       )}
+
+      {/* Render the modal */}
+      <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

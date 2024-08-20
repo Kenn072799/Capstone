@@ -43,7 +43,7 @@ const NavBar = () => {
             className="absolute right-0 top-12 bg-white border border-secondary-100 shadow-lg rounded-lg"
           >
             <ul className="space-y-2 p-2">
-              <li className="px-4 py-2 cursor-pointer rounded-md hover:bg-gray-100">My Account</li>
+              <li className="px-4 py-2 cursor-pointer rounded-md hover:bg-gray-100">My Profile</li>
               <li className="px-4 py-2 cursor-pointer rounded-md hover:bg-gray-100">Logout</li>
             </ul>
           </div>
