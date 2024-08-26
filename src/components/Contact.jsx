@@ -27,101 +27,60 @@ const Contact = () => {
         <p className="font-roboto text-secondary-500 md:text-xl">
           If you have any questions, please feel free to contact us.
         </p>
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <div className="mt-4 text-sm md:text-base">
-            <div className="my-4 flex">
-              <FaPhone
-                size={20}
-                className="text-primary-500"
-              />
-              <div className="flex flex-col">
-                {ContactData.phoneNumbers.map((number, index) => (
-                  <a
-                    key={index}
-                    href={`tel:${number.replace(/\s+/g, "")}`}
-                    className="my-1 pl-4 font-roboto text-secondary-500 hover:underline"
-                  >
-                    {number}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="my-4 flex items-center">
-              <FaEnvelope size={20} className="text-primary-500" />
-              <a
-                href={`mailto:${ContactData.email}`}
-                className="pl-4 font-roboto text-secondary-500 hover:underline"
-              >
-                {ContactData.email}
-              </a>
-            </div>
-            <div className="my-4 flex min-w-fit">
-              <FaFacebookF size={20} className="text-primary-500" />
-              <a
-                href={ContactData.facebook}
-                className="pl-4 font-roboto text-secondary-500 hover:underline"
-                target="_blank"
-              >
-                {ContactData.facebook}
-              </a>
-            </div>
-            <div className="my-4 flex md:max-w-[50%]">
-              <FaLocationDot size={20} className="min-w-fit text-primary-500" />
-              <p className="pl-4 font-roboto text-secondary-500">
-                Meralco Industrial Engineering Services Corporation 5th Floor,
-                Renaissance Tower 1000 Meralco Avenue, Ortigas Center Pasig
-                City, Philippines 1600
-              </p>
-            </div>
-          </div>
-          <div>
-            <form className="max-w-[450px] space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  required="required"
-                  placeholder="Name:"
-                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  required="required"
-                  placeholder="Email:"
-                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
-                />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  name="number"
-                  required="required"
-                  placeholder="Number: "
-                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
-                />
-              </div>
-              <div>
-                <textarea
-                  type="text"
-                  name="message"
-                  required="required"
-                  placeholder="Tell me about your needs:"
-                  className="mt-1 block w-full rounded-xl border border-secondary-500 p-3 focus:outline-primary-500"
-                />
-              </div>
-              <div className="flex max-w-32 justify-center rounded-3xl bg-primary-500 text-white hover:bg-primary-400">
-                <button
-                  type="submit"
-                  className="flex items-center px-5 py-3 text-sm md:px-6 md:py-4 md:text-base"
+        <div className="mt-4 text-sm md:text-base">
+          <div className="my-4 flex">
+            <FaPhone size={20} className="text-primary-500" />
+            <div className="flex flex-col">
+              {ContactData.phoneNumbers.map((number, index) => (
+                <a
+                  key={index}
+                  href={`tel:${number.replace(/\s+/g, "")}`}
+                  className="my-1 pl-4 font-roboto text-secondary-500 hover:underline"
                 >
-                  Submit
-                </button>
-              </div>
-            </form>
+                  {number}
+                </a>
+              ))}
+            </div>
           </div>
+          <div className="my-4 flex items-center">
+            <FaEnvelope size={20} className="text-primary-500" />
+            <a
+              href={`mailto:${ContactData.email}`}
+              className="pl-4 font-roboto text-secondary-500 hover:underline"
+            >
+              {ContactData.email}
+            </a>
+          </div>
+          <div className="my-4 flex min-w-fit">
+            <FaFacebookF size={20} className="text-primary-500" />
+            <a
+              href={ContactData.facebook}
+              className="pl-4 font-roboto text-secondary-500 hover:underline"
+              target="_blank"
+            >
+              {ContactData.facebook}
+            </a>
+          </div>
+          <div className="my-4 flex md:max-w-[50%]">
+            <FaLocationDot size={20} className="min-w-fit text-primary-500" />
+            <p className="pl-4 font-roboto text-secondary-500">
+              Meralco Industrial Engineering Services Corporation
+              <br /> 5th Floor,
+              Renaissance Tower 1000 Meralco Avenue, Ortigas Center Pasig City,
+              Philippines 1605
+            </p>
+          </div>
+        </div>
+        <div className="my-8">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.3095543908985!2d121.0614150758966!3d14.581428777544206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c813bb21467f%3A0x2aadaba9de44e01a!2sMeralco%20Industrial%20Engineering%20Services%20Corporation!5e0!3m2!1sen!2sph!4v1724694942406!5m2!1sen!2sph"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </Container>
     </div>

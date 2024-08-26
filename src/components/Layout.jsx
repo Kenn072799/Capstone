@@ -8,11 +8,11 @@ export const Layout = ({ children }) => {
   return (
     // This layout use for all pages to render Navbar
     <>
-      <Topline></Topline>
-      <Topnav></Topnav>
-      <Mainnav></Mainnav>
+      <Topline/>
+      <Topnav/>
+      <Mainnav/>
       <div>{children}</div>
-      <Footer></Footer>
+      <Footer/>
     </>
   );
 };

@@ -47,7 +47,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
